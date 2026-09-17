@@ -39,6 +39,7 @@ Proyecto desarrollado como parte del módulo **BI y Big Data - Nivel 5** (Odisea
 ---
 
 ## 📂 Estructura del proyecto
+```text
 reto4_pobreza_infantil/
 │
 ├── data/
@@ -66,8 +67,9 @@ reto4_pobreza_infantil/
 │
 ├── requirements.txt
 └── README.md
+```
 
-text
+
 
 ---
 
@@ -99,7 +101,10 @@ python src/06_asociacion.py
 python src/07_evaluacion_interpretacion.py
 python src/08_recomendaciones.py
 python src/09_informe_tecnico.py
-📊 Dataset
+```
+
+### 📊 Dataset
+
 Fuente: world-bank-unicef-data
 
 Archivo principal: world_bank_gdp_data_with_poverty.xlsx
@@ -115,7 +120,8 @@ Características
 
 Periodo: 1960-2024
 
-🔬 Metodología
+### 🔬 Metodología
+
 1️⃣ Clasificación
 Predicción binaria de high_child_mortality usando:
 
@@ -137,7 +143,8 @@ Reglas con Apriori y FP-Growth (soporte ≥ 5%, confianza ≥ 60%, lift > 1.1).
 
 Resultado: 85 reglas, siendo la más fuerte GDP_Bajo + Pob_Alta → Mort_Alta
 
-📈 Visualizaciones destacadas
+### 📈 Visualizaciones destacadas
+
 Dashboard final
 https://reports/figures/dashboard_final.png
 
@@ -152,7 +159,8 @@ https://reports/figures/clustering_pca_comparativa.png
 
 (15 visualizaciones completas en reports/figures/)
 
-💡 Recomendaciones de negocio
+### 💡 Recomendaciones de negocio
+
 R1 - Países con desarrollo relativo: Programas de prevención temprana
 
 R2 - Países en situación crítica: Intervención humanitaria integral
@@ -165,7 +173,8 @@ R5 - Monitoreo continuo: Pipeline predictivo anual
 
 📄 Detalles en reports/final/Recomendaciones_Reto4_jdthg.pdf
 
-🛠️ Tecnologías utilizadas
+### 🛠️ Tecnologías utilizadas
+
 Categoría	Herramientas
 Lenguaje	Python 3.13
 Datos	Pandas, NumPy, OpenPyXL
@@ -178,7 +187,8 @@ Documentación	Pandoc, wkhtmltopdf
 
 💼 Recomendaciones de negocio
 
-⚠️ Limitaciones
+### ⚠️ Limitaciones
+
 Cobertura limitada de variables de pobreza infantil (~0.5%)
 
 Se usó under5_mortality_rate como proxy (cobertura 82%)
@@ -187,7 +197,7 @@ Correlación ≠ causalidad
 
 Requiere reentrenamiento anual por deriva de datos
 
-📜 Licencia
+### 📜 Licencia
 MIT License - ver LICENSE para más detalles.
 
 👤 Autor
@@ -197,7 +207,7 @@ Proyecto del módulo BI y Big Data - Nivel 5
 
 ⭐ Si este proyecto te resulta útil, ¡dale una estrella!
 
-🙏 Agradecimientos
+### 🙏 Agradecimientos
 UNICEF Data
 
 World Bank Open Data

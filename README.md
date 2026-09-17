@@ -185,10 +185,11 @@ ML	Scikit-learn, Imbalanced-learn
 Reglas de asociación	MLxtend
 Visualización	Matplotlib, Seaborn
 Documentación	Pandoc, wkhtmltopdf
-📚 Documentación
-📄 Informe Técnico completo
 
-💼 Recomendaciones de negocio
+### 📚 Documentación
+- 📄 [Informe Técnico completo](reports/final/Informe_Tecnico_Reto4_jdthg.pdf)
+- 💼 [Recomendaciones de negocio](reports/final/Recomendaciones_Reto4_jdthg.pdf)
+- 🎤 [Presentación PowerPoint](reports/final/Presentacion-Reto-4-Data-Mining-aplicado-a-Pobreza-Infantil.pptx)
 
 ### ⚠️ Limitaciones
 

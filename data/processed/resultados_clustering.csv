@@ -1,0 +1,4 @@
+Modelo,Silueta,Davies-Bouldin,Calinski-Harabasz,N_Clusters,Ruido
+K-means,0.537,0.8997,1605.5214,2,0
+DBSCAN,0.5602,0.5971,304.3094,3,90
+Jerarquico,0.5615,0.7822,1371.5982,2,0

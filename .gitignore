@@ -1,26 +1,33 @@
 # Entornos virtuales
+.venv/
 venv/
 env/
-.venv/
+ENV/
 
-# Datos (no subir datasets al repo)
-data/raw/*
-data/processed/*
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-
-# Modelos entrenados
-models/*.pkl
-models/*.rds
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.pytest_cache/
 
 # Jupyter
 .ipynb_checkpoints/
 
-# Python
-__pycache__/
-*.pyc
-.pytest_cache/
-
 # Sistema
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# NO ignorar: PDFs, modelos .pkl, PNGs, CSVs, HTMLs
+# Todos estos son entregables importantes del reto

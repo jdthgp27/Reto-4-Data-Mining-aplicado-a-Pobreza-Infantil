@@ -1,0 +1,4 @@
+tecnica,hallazgo,implicacion
+Clasificacion,Random Forest predice alta mortalidad infantil con F1=0.930,El PIB per capita es el predictor mas fuerte (44.9% importancia)
+Clustering,K-means identifica 2 clusters: desarrollo relativo (82%) vs critico (18%),Segmentacion dicotomica clara para politicas diferenciadas
+Asociacion,"Regla mas fuerte: Pob_Alta, GDP_Bajo -> frozenset({'Mort_Alta'}) (lift=6.37)",Combinacion GDP bajo + pobreza alta multiplica 6.4x el riesgo

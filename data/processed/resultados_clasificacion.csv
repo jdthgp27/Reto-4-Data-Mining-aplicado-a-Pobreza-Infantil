@@ -1,0 +1,4 @@
+Modelo,Accuracy,Precision,Recall,F1-Score,ROC-AUC
+RandomForest,0.9309,0.9405,0.9199,0.9301,0.9812
+SVM,0.8624,0.8487,0.8821,0.8651,0.9487
+DecisionTree,0.8523,0.8184,0.9054,0.8597,0.946

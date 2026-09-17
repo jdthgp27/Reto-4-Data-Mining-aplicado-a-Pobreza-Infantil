@@ -157,6 +157,10 @@ https://reports/figures/clasificacion_importancia.png
 Segmentación de países
 https://reports/figures/clustering_pca_comparativa.png
 
+Mapa mundial de pobreza infantil
+
+https://reports/figures/mapa_mundial_pobreza.png
+
 (15 visualizaciones completas en reports/figures/)
 
 ### 💡 Recomendaciones de negocio

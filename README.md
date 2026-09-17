@@ -145,23 +145,22 @@ Resultado: 85 reglas, siendo la más fuerte GDP_Bajo + Pob_Alta → Mort_Alta
 
 ### 📈 Visualizaciones destacadas
 
-Dashboard final
-https://reports/figures/dashboard_final.png
+### Dashboard final
+![Dashboard final](reports/figures/dashboard_final.png)
 
-Matriz de correlaciones
-https://reports/figures/matriz_correlaciones.png
+### Matriz de correlaciones
+![Matriz de correlaciones](reports/figures/matriz_correlaciones.png)
 
-Importancia de features
-https://reports/figures/clasificacion_importancia.png
+### Importancia de features
+![Importancia de features](reports/figures/clasificacion_importancia.png)
 
-Segmentación de países
-https://reports/figures/clustering_pca_comparativa.png
+### Segmentación de países
+![Segmentación de países](reports/figures/clustering_pca_comparativa.png)
 
-Mapa mundial de pobreza infantil
+### Mapa mundial de pobreza infantil
+![Mapa mundial](reports/figures/mapa_mundial_pobreza.png)
 
-https://reports/figures/mapa_mundial_pobreza.png
-
-(15 visualizaciones completas en reports/figures/)
+*(15 visualizaciones completas en `reports/figures/`)*
 
 ### 💡 Recomendaciones de negocio
 

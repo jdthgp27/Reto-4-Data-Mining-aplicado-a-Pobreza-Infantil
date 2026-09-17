@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Informe_Tecnico_Reto4_jdthg</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">body { font-family: "Segoe UI", Arial, sans-serif; max-width: 900px;
+margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+h1 { color: #1a5490; border-bottom: 3px solid #1a5490; padding-bottom: 10px; }
+h2 { color: #2c3e50; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+h3 { color: #34495e; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+th { background-color: #1a5490; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px;
+font-family: Consolas, monospace; font-size: 0.9em; }
+pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+blockquote { border-left: 4px solid #1a5490; padding-left: 15px;
+color: #555; font-style: italic; background: #f9f9f9; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Informe_Tecnico_Reto4_jdthg</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#informe-técnico---reto-4-data-mining-aplicado-a-pobreza-infantil" id="toc-informe-técnico---reto-4-data-mining-aplicado-a-pobreza-infantil">Informe
+Técnico - Reto 4: Data Mining Aplicado a Pobreza Infantil</a>
+<ul>
+<li><a href="#contexto-y-objetivo" id="toc-contexto-y-objetivo">1.
+Contexto y Objetivo</a></li>
+<li><a href="#selección-del-dataset" id="toc-selección-del-dataset">2.
+Selección del Dataset</a></li>
+<li><a href="#técnicas-aplicadas" id="toc-técnicas-aplicadas">3.
+Técnicas Aplicadas</a></li>
+<li><a href="#evaluación-comparativa-de-modelos" id="toc-evaluación-comparativa-de-modelos">4. Evaluación Comparativa de
+Modelos</a></li>
+<li><a href="#interpretación-de-resultados" id="toc-interpretación-de-resultados">5. Interpretación de
+Resultados</a></li>
+<li><a href="#limitaciones-del-análisis" id="toc-limitaciones-del-análisis">6. Limitaciones del Análisis</a></li>
+<li><a href="#conclusiones" id="toc-conclusiones">7.
+Conclusiones</a></li>
+<li><a href="#anexos" id="toc-anexos">8. Anexos</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="informe-técnico---reto-4-data-mining-aplicado-a-pobreza-infantil">Informe
+Técnico - Reto 4: Data Mining Aplicado a Pobreza Infantil</h1>
+<p><strong>Analista:</strong> jdthg <strong>Fecha:</strong> 2026-09-17
+<strong>Módulo:</strong> BI y Big Data - Nivel 5 <strong>Reto:</strong>
+Aplicación de Técnicas Avanzadas de Data Mining</p>
+<hr />
+<h2 id="contexto-y-objetivo">1. Contexto y Objetivo</h2>
+<h3 id="contexto-narrativo">Contexto Narrativo</h3>
+<p>El viajero llega al Santuario de los Secretos Ocultos, donde debe
+descifrar patrones y asociaciones en un vasto conjunto de datos sobre
+pobreza infantil.</p>
+<h3 id="objetivo-del-análisis">Objetivo del Análisis</h3>
+<p>Aplicar técnicas avanzadas de Data Mining (clasificación, clustering
+y asociación) para extraer insights que informen políticas de reducción
+de pobreza infantil.</p>
+<hr />
+<h2 id="selección-del-dataset">2. Selección del Dataset</h2>
+<h3 id="fuente">Fuente</h3>
+<p><strong>Repositorio:</strong> <code>world-bank-unicef-data</code>
+(GitHub - danribes) <strong>Archivo:</strong>
+<code>world_bank_gdp_data_with_poverty.xlsx</code>
+<strong>Origen:</strong> Banco Mundial + UNICEF</p>
+<h3 id="características">Características</h3>
+<ul>
+<li><strong>14.105 registros</strong> (país × año)</li>
+<li><strong>217 países</strong></li>
+<li><strong>64 columnas</strong></li>
+<li><strong>Periodo:</strong> 1960-2024</li>
+<li><strong>Variables:</strong> económicas, fiscales, pobreza,
+mortalidad infantil, nutrición, desigualdad</li>
+</ul>
+<h3 id="justificación-de-la-elección">Justificación de la Elección</h3>
+<ol type="1">
+<li><strong>Volumen suficiente</strong> para algoritmos avanzados</li>
+<li><strong>Variables mixtas</strong> (numéricas + categóricas)</li>
+<li><strong>Relevancia de negocio</strong> directa: pobreza
+infantil</li>
+<li><strong>Fuentes oficiales</strong> con documentación clara</li>
+<li><strong>Cobertura temporal</strong> amplia (64 años)</li>
+</ol>
+<h3 id="preparación">Preparación</h3>
+<ul>
+<li>Filtrado a partir del año 2000 (mayor calidad de datos)</li>
+<li>Selección de 21 columnas relevantes</li>
+<li>Dos datasets derivados: clasificación (4.577 filas) y clustering
+(1.833 filas)</li>
+</ul>
+<hr />
+<h2 id="técnicas-aplicadas">3. Técnicas Aplicadas</h2>
+<h3 id="clasificación">3.1 CLASIFICACIÓN</h3>
+<p><strong>Objetivo:</strong> Predecir si un país tiene alta mortalidad
+infantil (&gt;mediana 19.84)</p>
+<p><strong>Variables objetivo:</strong>
+<code>high_child_mortality</code> (binaria, balance 50/50)</p>
+<p><strong>Modelos evaluados:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>Accuracy</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1-Score</th>
+<th>ROC-AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RandomForest</td>
+<td>0.9309</td>
+<td>0.9405</td>
+<td>0.9199</td>
+<td>0.9301</td>
+<td>0.9812</td>
+</tr>
+<tr>
+<td>SVM</td>
+<td>0.8624</td>
+<td>0.8487</td>
+<td>0.8821</td>
+<td>0.8651</td>
+<td>0.9487</td>
+</tr>
+<tr>
+<td>DecisionTree</td>
+<td>0.8523</td>
+<td>0.8184</td>
+<td>0.9054</td>
+<td>0.8597</td>
+<td>0.9460</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Modelo ganador:</strong> RandomForest</p>
+<p><strong>Top 5 features más importantes:</strong> 1.
+gdp_per_capita_current_usd (44.9%) 2. low_birth_weight_pct (10.6%) 3.
+poverty_headcount_8_dollars_pct (9.6%) 4.
+poverty_headcount_4_dollars_pct (7.2%) 5. gdp_billions_usd (6.9%)</p>
+<p><strong>Visualizaciones:</strong> -
+<code>clasificacion_comparativa.png</code> -
+<code>clasificacion_matriz_confusion.png</code> -
+<code>clasificacion_roc.png</code> -
+<code>clasificacion_arbol.png</code> -
+<code>clasificacion_importancia.png</code></p>
+<hr />
+<h3 id="clustering">3.2 CLUSTERING</h3>
+<p><strong>Objetivo:</strong> Segmentar países por perfil de pobreza</p>
+<p><strong>Variables:</strong> GDP, Gini, mortalidad &lt;5, pobreza
+&lt;3 USD</p>
+<p><strong>Algoritmos evaluados:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Algoritmo</th>
+<th>Silueta</th>
+<th>Davies-Bouldin</th>
+<th>Calinski-Harabasz</th>
+<th>Clusters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>K-means</td>
+<td>0.5370</td>
+<td>0.8997</td>
+<td>1605.52</td>
+<td>2</td>
+</tr>
+<tr>
+<td>DBSCAN</td>
+<td>0.5602</td>
+<td>0.5971</td>
+<td>304.31</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Jerarquico</td>
+<td>0.5615</td>
+<td>0.7822</td>
+<td>1371.60</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Algoritmo ganador:</strong> K-means con K=2</p>
+<p><strong>Perfiles de clusters:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>Países</th>
+<th>GDP</th>
+<th>Gini</th>
+<th>Mortalidad</th>
+<th>Pobreza</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1.504</td>
+<td>$21.820</td>
+<td>35.1</td>
+<td>10.8</td>
+<td>2.8%</td>
+</tr>
+<tr>
+<td>1</td>
+<td>329</td>
+<td>$1.569</td>
+<td>43.2</td>
+<td>68.2</td>
+<td>39.5%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visualizaciones:</strong> -
+<code>clustering_k_optimo.png</code> -
+<code>clustering_pca_comparativa.png</code> -
+<code>clustering_dendrograma.png</code> -
+<code>clustering_boxplots.png</code></p>
+<hr />
+<h3 id="asociación">3.3 ASOCIACIÓN</h3>
+<p><strong>Objetivo:</strong> Descubrir reglas entre indicadores</p>
+<p><strong>Algoritmos:</strong> Apriori y FP-Growth (mismo resultado: 75
+itemsets)</p>
+<p><strong>Parámetros:</strong> soporte ≥ 5%, confianza ≥ 60%, lift &gt;
+1.1</p>
+<p><strong>Total reglas:</strong> 85</p>
+<p><strong>Top 5 reglas por lift:</strong></p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 24%" />
+<col style="width: 16%" />
+<col style="width: 20%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr>
+<th>Antecedentes</th>
+<th>Consecuente</th>
+<th>Soporte</th>
+<th>Confianza</th>
+<th>Lift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pob_Alta, GDP_Bajo</td>
+<td>frozenset({‘Mort_Alta’})</td>
+<td>0.0797</td>
+<td>0.6952</td>
+<td>6.37</td>
+</tr>
+<tr>
+<td>Mort_Alta</td>
+<td>frozenset({‘Pob_Alta’, ‘GDP_Bajo’})</td>
+<td>0.0797</td>
+<td>0.7300</td>
+<td>6.37</td>
+</tr>
+<tr>
+<td>Mort_Alta</td>
+<td>frozenset({‘Pob_Alta’})</td>
+<td>0.0955</td>
+<td>0.8750</td>
+<td>5.69</td>
+</tr>
+<tr>
+<td>Pob_Alta</td>
+<td>frozenset({‘Mort_Alta’})</td>
+<td>0.0955</td>
+<td>0.6206</td>
+<td>5.69</td>
+</tr>
+<tr>
+<td>GDP_Bajo, Mort_Alta</td>
+<td>frozenset({‘Pob_Alta’})</td>
+<td>0.0797</td>
+<td>0.8639</td>
+<td>5.62</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regla estrella:</strong>
+<code>GDP_Bajo + Pob_Alta → Mort_Alta</code> con lift=6.37</p>
+<p><strong>Visualizaciones:</strong> -
+<code>asociacion_scatter.png</code> -
+<code>asociacion_heatmap.png</code> - <code>asociacion_top10.png</code>
+- <code>asociacion_red.png</code></p>
+<hr />
+<h2 id="evaluación-comparativa-de-modelos">4. Evaluación Comparativa de
+Modelos</h2>
+<p><strong>Criterios de selección:</strong></p>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 30%" />
+<col style="width: 24%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Clasificación</th>
+<th>Clustering</th>
+<th>Asociación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Métrica principal</strong></td>
+<td>F1-Score</td>
+<td>Silueta</td>
+<td>Lift</td>
+</tr>
+<tr>
+<td><strong>Modelo elegido</strong></td>
+<td>Random Forest</td>
+<td>K-means (K=2)</td>
+<td>FP-Growth</td>
+</tr>
+<tr>
+<td><strong>Valor obtenido</strong></td>
+<td>0.9301</td>
+<td>0.5370</td>
+<td>6.37</td>
+</tr>
+<tr>
+<td><strong>Interpretabilidad</strong></td>
+<td>Media (importancia features)</td>
+<td>Alta (perfiles claros)</td>
+<td>Alta (reglas legibles)</td>
+</tr>
+<tr>
+<td><strong>Aplicabilidad</strong></td>
+<td>Alta</td>
+<td>Alta</td>
+<td>Muy alta</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="interpretación-de-resultados">5. Interpretación de
+Resultados</h2>
+<h3 id="insight-1-el-pib-es-el-predictor-dominante">Insight #1: El PIB
+es el predictor dominante</h3>
+<p>El GDP per cápita explica el 44.9% de la capacidad predictiva del
+modelo. <strong>Implicación:</strong> Las intervenciones económicas
+tienen el mayor potencial de impacto.</p>
+<h3 id="insight-2-existen-dos-mundos-separados">Insight #2: Existen dos
+mundos separados</h3>
+<p>Los 217 países se dividen claramente en: - <strong>82%</strong> con
+desarrollo relativo (mortalidad &lt;11) - <strong>18%</strong> en
+situación crítica (mortalidad &gt;68)</p>
+<p><strong>Implicación:</strong> Políticas diferenciadas por
+segmento.</p>
+<h3 id="insight-3-la-trampa-de-la-pobreza-es-real">Insight #3: La trampa
+de la pobreza es real</h3>
+<p>La regla <code>GDP_Bajo + Pob_Alta → Mort_Alta</code> con lift 6.37
+demuestra que los factores se refuerzan mutuamente.</p>
+<p><strong>Implicación:</strong> Se requieren intervenciones
+multidimensionales.</p>
+<hr />
+<h2 id="limitaciones-del-análisis">6. Limitaciones del Análisis</h2>
+<ol type="1">
+<li><strong>Datos faltantes</strong>: Algunas variables clave tienen
+&lt;20% de cobertura</li>
+<li><strong>Sesgo temporal</strong>: 2024 tiene datos incompletos</li>
+<li><strong>Correlación ≠ causalidad</strong>: Los hallazgos son
+asociativos</li>
+<li><strong>Variables omitidas</strong>: No se incluyen factores
+políticos, culturales o geográficos</li>
+<li><strong>Deriva del modelo</strong>: Requiere reentrenamiento
+anual</li>
+</ol>
+<hr />
+<h2 id="conclusiones">7. Conclusiones</h2>
+<p>El análisis demuestra que las <strong>técnicas avanzadas de Data
+Mining</strong> permiten:</p>
+<ol type="1">
+<li><strong>Predecir</strong> con alta precisión (F1=0.93) qué países
+tienen riesgo de mortalidad infantil alta</li>
+<li><strong>Segmentar</strong> países en grupos homogéneos para
+políticas diferenciadas</li>
+<li><strong>Descubrir</strong> reglas de asociación que revelan la
+interacción entre factores</li>
+<li><strong>Priorizar</strong> recursos basándose en datos
+objetivos</li>
+</ol>
+<p>El hallazgo más relevante para el negocio es que <strong>la
+combinación de pobreza extrema y bajo desarrollo económico eleva 6.4x el
+riesgo de mortalidad infantil</strong>, lo cual justifica un enfoque
+integrado de intervenciones.</p>
+<hr />
+<h2 id="anexos">8. Anexos</h2>
+<h3 id="código-fuente">Código fuente</h3>
+<ul>
+<li><code>src/01_exploracion.py</code> - Exploración inicial</li>
+<li><code>src/02_diagnostico.py</code> - Diagnóstico de calidad</li>
+<li><code>src/03_preparacion.py</code> - Limpieza y preparación</li>
+<li><code>src/04_clasificacion.py</code> - Clasificación</li>
+<li><code>src/05_clustering.py</code> - Clustering</li>
+<li><code>src/06_asociacion.py</code> - Asociación</li>
+<li><code>src/06b_visualizaciones_asociacion.py</code> - Visualizaciones
+adicionales</li>
+<li><code>src/07_evaluacion_interpretacion.py</code> - Evaluación</li>
+<li><code>src/08_recomendaciones.py</code> - Recomendaciones</li>
+</ul>
+<h3 id="modelos-entrenados">Modelos entrenados</h3>
+<ul>
+<li><code>models/mejor_modelo_clasificacion.pkl</code></li>
+<li><code>models/kmeans_clustering.pkl</code></li>
+<li><code>models/reglas_asociacion.pkl</code></li>
+</ul>
+<h3 id="datos-procesados">Datos procesados</h3>
+<ul>
+<li><code>data/processed/df_clasificacion.csv</code></li>
+<li><code>data/processed/df_clustering.csv</code></li>
+<li><code>data/processed/paises_con_cluster.csv</code></li>
+<li><code>data/processed/perfiles_clusters.csv</code></li>
+<li><code>data/processed/reglas_asociacion.csv</code></li>
+<li><code>data/processed/resultados_completos.xlsx</code></li>
+</ul>
+<h3 id="figuras-15">Figuras (15)</h3>
+<p>Todas en <code>reports/figures/</code></p>
+<hr />
+<p><strong>Fin del informe técnico</strong></p>
+</body>
+</html>

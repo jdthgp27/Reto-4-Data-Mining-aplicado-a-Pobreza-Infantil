@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.11" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Recomendaciones_Reto4_jdthg</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+  <style type="text/css">body { font-family: "Segoe UI", Arial, sans-serif; max-width: 900px;
+margin: 40px auto; padding: 0 20px; line-height: 1.6; color: #333; }
+h1 { color: #1a5490; border-bottom: 3px solid #1a5490; padding-bottom: 10px; }
+h2 { color: #2c3e50; margin-top: 30px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+h3 { color: #34495e; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+th { background-color: #1a5490; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px;
+font-family: Consolas, monospace; font-size: 0.9em; }
+pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+blockquote { border-left: 4px solid #1a5490; padding-left: 15px;
+color: #555; font-style: italic; background: #f9f9f9; }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Recomendaciones_Reto4_jdthg</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#recomendaciones-de-negocio---pobreza-infantil" id="toc-recomendaciones-de-negocio---pobreza-infantil">Recomendaciones
+de Negocio - Pobreza Infantil</a>
+<ul>
+<li><a href="#reto-4-aplicación-de-técnicas-avanzadas-de-data-mining" id="toc-reto-4-aplicación-de-técnicas-avanzadas-de-data-mining">Reto 4:
+Aplicación de Técnicas Avanzadas de Data Mining</a></li>
+<li><a href="#resumen-ejecutivo" id="toc-resumen-ejecutivo">1. Resumen
+Ejecutivo</a></li>
+<li><a href="#los-3-hallazgos-clave" id="toc-los-3-hallazgos-clave">2.
+Los 3 Hallazgos Clave</a></li>
+<li><a href="#recomendaciones-por-segmento" id="toc-recomendaciones-por-segmento">3. Recomendaciones por
+Segmento</a></li>
+<li><a href="#cronograma-de-implementación" id="toc-cronograma-de-implementación">4. Cronograma de
+Implementación</a></li>
+<li><a href="#indicadores-clave-de-seguimiento-kpis" id="toc-indicadores-clave-de-seguimiento-kpis">5. Indicadores Clave de
+Seguimiento (KPIs)</a></li>
+<li><a href="#riesgos-y-consideraciones" id="toc-riesgos-y-consideraciones">6. Riesgos y Consideraciones</a></li>
+<li><a href="#próximos-pasos" id="toc-próximos-pasos">7. Próximos
+Pasos</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="recomendaciones-de-negocio---pobreza-infantil">Recomendaciones
+de Negocio - Pobreza Infantil</h1>
+<h2 id="reto-4-aplicación-de-técnicas-avanzadas-de-data-mining">Reto 4:
+Aplicación de Técnicas Avanzadas de Data Mining</h2>
+<p><strong>Fecha:</strong> 2026-09-17 <strong>Analista:</strong> jdthg
+<strong>Dataset:</strong> UNICEF/World Bank - Pobreza Infantil (14.105
+registros, 217 países, 1960-2024)</p>
+<hr />
+<h2 id="resumen-ejecutivo">1. Resumen Ejecutivo</h2>
+<p>Este análisis aplicó tres técnicas avanzadas de Data Mining sobre
+datos de pobreza infantil combinados con indicadores socioeconómicos de
+217 países:</p>
+<ul>
+<li><strong>Clasificación</strong> (Random Forest): F1=0.93,
+ROC-AUC=0.98</li>
+<li><strong>Clustering</strong> (K-means, K=2): Silueta=0.54</li>
+<li><strong>Asociación</strong> (FP-Growth): 85 reglas, lift
+máximo=6.37</li>
+</ul>
+<h3 id="hallazgo-principal">Hallazgo Principal</h3>
+<blockquote>
+<p><strong>La combinación de PIB bajo + pobreza alta multiplica 6.4
+veces el riesgo de mortalidad infantil alta.</strong></p>
+</blockquote>
+<p>Este hallazgo justifica intervenciones focalizadas en los 329
+registros país-año clasificados como “situación crítica” (África
+subsahariana principalmente).</p>
+<hr />
+<h2 id="los-3-hallazgos-clave">2. Los 3 Hallazgos Clave</h2>
+<h3 id="hallazgo-clasificacion">Hallazgo: Clasificacion</h3>
+<p><strong>Descubrimiento:</strong> Random Forest predice alta
+mortalidad infantil con F1=0.930</p>
+<p><strong>Implicación de negocio:</strong> El PIB per capita es el
+predictor mas fuerte (44.9% importancia)</p>
+<h3 id="hallazgo-clustering">Hallazgo: Clustering</h3>
+<p><strong>Descubrimiento:</strong> K-means identifica 2 clusters:
+desarrollo relativo (82%) vs critico (18%)</p>
+<p><strong>Implicación de negocio:</strong> Segmentacion dicotomica
+clara para politicas diferenciadas</p>
+<h3 id="hallazgo-asociacion">Hallazgo: Asociacion</h3>
+<p><strong>Descubrimiento:</strong> Regla mas fuerte: Pob_Alta, GDP_Bajo
+-&gt; frozenset({‘Mort_Alta’}) (lift=6.37)</p>
+<p><strong>Implicación de negocio:</strong> Combinacion GDP bajo +
+pobreza alta multiplica 6.4x el riesgo</p>
+<hr />
+<h2 id="recomendaciones-por-segmento">3. Recomendaciones por
+Segmento</h2>
+<h3 id="r1-paises-con-desarrollo-relativo">[R1] Paises con desarrollo
+relativo</h3>
+<table>
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cluster objetivo</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Países afectados</strong></td>
+<td>1504</td>
+</tr>
+<tr>
+<td><strong>Hallazgo base</strong></td>
+<td>Cluster 0: GDP promedio $21.8k, mortalidad 10.8, pobreza 2.8%</td>
+</tr>
+<tr>
+<td><strong>Acción recomendada</strong></td>
+<td>Programas de mantenimiento y prevencion temprana</td>
+</tr>
+<tr>
+<td><strong>Objetivo SMART</strong></td>
+<td>Mantener mortalidad infantil &lt;15 por 1000 nacidos vivos en
+2027</td>
+</tr>
+<tr>
+<td><strong>Recursos necesarios</strong></td>
+<td>Sistema de alerta temprana (presupuesto bajo, 5% del total)</td>
+</tr>
+<tr>
+<td><strong>KPI de seguimiento</strong></td>
+<td>Tasa de mortalidad infantil anual</td>
+</tr>
+<tr>
+<td><strong>Riesgo principal</strong></td>
+<td>Complacencia por bajos indicadores actuales</td>
+</tr>
+</tbody>
+</table>
+<h3 id="r2-paises-en-situacion-critica">[R2] Paises en situacion
+critica</h3>
+<table>
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cluster objetivo</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Países afectados</strong></td>
+<td>329</td>
+</tr>
+<tr>
+<td><strong>Hallazgo base</strong></td>
+<td>Cluster 1: GDP $1.6k, mortalidad 68.2, pobreza 39.5%
+(lift=6.37)</td>
+</tr>
+<tr>
+<td><strong>Acción recomendada</strong></td>
+<td>Intervencion integral de emergencia humanitaria</td>
+</tr>
+<tr>
+<td><strong>Objetivo SMART</strong></td>
+<td>Reducir mortalidad infantil 30% y pobreza extrema 25% en 3 anos</td>
+</tr>
+<tr>
+<td><strong>Recursos necesarios</strong></td>
+<td>Fondos multilaterales (UNICEF, BM) + cooperacion internacional</td>
+</tr>
+<tr>
+<td><strong>KPI de seguimiento</strong></td>
+<td>Reduccion de mortalidad &lt;5 anos y pobreza &lt;3 USD</td>
+</tr>
+<tr>
+<td><strong>Riesgo principal</strong></td>
+<td>Inestabilidad politica, conflictos armados, corrupcion</td>
+</tr>
+</tbody>
+</table>
+<h3 id="r3-priorizar-cuando-coincidan-gdp-bajo-pobreza-alta">[R3]
+Priorizar cuando coincidan GDP bajo + pobreza alta</h3>
+<table>
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cluster objetivo</strong></td>
+<td>Todos</td>
+</tr>
+<tr>
+<td><strong>Países afectados</strong></td>
+<td>Segmento transversal</td>
+</tr>
+<tr>
+<td><strong>Hallazgo base</strong></td>
+<td>Regla: GDP_Bajo + Pob_Alta -&gt; Mort_Alta (lift=6.37,
+conf=0.70)</td>
+</tr>
+<tr>
+<td><strong>Acción recomendada</strong></td>
+<td>Sistema de alerta temprana basado en combinacion de indicadores</td>
+</tr>
+<tr>
+<td><strong>Objetivo SMART</strong></td>
+<td>Identificar 100% de paises en riesgo alto en 6 meses</td>
+</tr>
+<tr>
+<td><strong>Recursos necesarios</strong></td>
+<td>Dashboard interactivo + analistas de datos (mediano)</td>
+</tr>
+<tr>
+<td><strong>KPI de seguimiento</strong></td>
+<td>Precision de alertas, tiempo de respuesta</td>
+</tr>
+<tr>
+<td><strong>Riesgo principal</strong></td>
+<td>Datos desactualizados para algunos paises</td>
+</tr>
+</tbody>
+</table>
+<h3 id="r4-optimizacion-presupuestaria-basada-en-modelo-predictivo">[R4]
+Optimizacion presupuestaria basada en modelo predictivo</h3>
+<table>
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cluster objetivo</strong></td>
+<td>Todos</td>
+</tr>
+<tr>
+<td><strong>Países afectados</strong></td>
+<td>Todos los paises elegibles</td>
+</tr>
+<tr>
+<td><strong>Hallazgo base</strong></td>
+<td>Random Forest F1=0.930, PIB es 45% de la importancia</td>
+</tr>
+<tr>
+<td><strong>Acción recomendada</strong></td>
+<td>Priorizar inversiones en desarrollo economico como base de salud
+infantil</td>
+</tr>
+<tr>
+<td><strong>Objetivo SMART</strong></td>
+<td>Aumentar GDP per capita 5% anual en paises criticos</td>
+</tr>
+<tr>
+<td><strong>Recursos necesarios</strong></td>
+<td>Programas economicos + inversiones en infraestructura</td>
+</tr>
+<tr>
+<td><strong>KPI de seguimiento</strong></td>
+<td>GDP per capita, indice de desarrollo humano</td>
+</tr>
+<tr>
+<td><strong>Riesgo principal</strong></td>
+<td>Crecimiento economico desigual, beneficiando solo elite</td>
+</tr>
+</tbody>
+</table>
+<h3 id="r5-monitoreo-continuo-con-modelo-predictivo">[R5] Monitoreo
+continuo con modelo predictivo</h3>
+<table>
+<colgroup>
+<col style="width: 58%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Atributo</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cluster objetivo</strong></td>
+<td>Todos</td>
+</tr>
+<tr>
+<td><strong>Países afectados</strong></td>
+<td>Todos</td>
+</tr>
+<tr>
+<td><strong>Hallazgo base</strong></td>
+<td>Modelo entrenado puede predecir nuevos casos con 93% de F1</td>
+</tr>
+<tr>
+<td><strong>Acción recomendada</strong></td>
+<td>Implementar pipeline automatizado de prediccion anual</td>
+</tr>
+<tr>
+<td><strong>Objetivo SMART</strong></td>
+<td>Actualizar predicciones anualmente con nuevos datos</td>
+</tr>
+<tr>
+<td><strong>Recursos necesarios</strong></td>
+<td>Infraestructura de datos + equipo tecnico (mediano-alto)</td>
+</tr>
+<tr>
+<td><strong>KPI de seguimiento</strong></td>
+<td>Frecuencia de actualizacion, uso del modelo en decisiones</td>
+</tr>
+<tr>
+<td><strong>Riesgo principal</strong></td>
+<td>Deriva del modelo (concept drift) por cambios socioeconomicos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="cronograma-de-implementación">4. Cronograma de
+Implementación</h2>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 38%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Duración</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Corto plazo (0-6 meses)</strong></td>
+<td>6 meses</td>
+<td>R3: Sistema de alerta temprana; R5: Pipeline de predicción</td>
+</tr>
+<tr>
+<td><strong>Medio plazo (6-18 meses)</strong></td>
+<td>12 meses</td>
+<td>R1: Programas de prevención; R2: Intervención de emergencia</td>
+</tr>
+<tr>
+<td><strong>Largo plazo (18-36 meses)</strong></td>
+<td>18 meses</td>
+<td>R4: Inversiones en desarrollo económico</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="indicadores-clave-de-seguimiento-kpis">5. Indicadores Clave de
+Seguimiento (KPIs)</h2>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 30%" />
+<col style="width: 32%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>KPI</th>
+<th>Valor actual</th>
+<th>Objetivo 2027</th>
+<th>Frecuencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mortalidad infantil &lt;5 años (cluster 1)</td>
+<td>68.2/1000</td>
+<td>&lt;48/1000</td>
+<td>Anual</td>
+</tr>
+<tr>
+<td>Pobreza &lt;3 USD (cluster 1)</td>
+<td>39.5%</td>
+<td>&lt;30%</td>
+<td>Anual</td>
+</tr>
+<tr>
+<td>GDP per cápita (países críticos)</td>
+<td>$1.569</td>
+<td>$1.900</td>
+<td>Anual</td>
+</tr>
+<tr>
+<td>Precisión del modelo predictivo</td>
+<td>F1=0.93</td>
+<td>F1&gt;0.90</td>
+<td>Anual</td>
+</tr>
+<tr>
+<td>Cobertura del sistema de alerta</td>
+<td>0%</td>
+<td>100%</td>
+<td>Semestral</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="riesgos-y-consideraciones">6. Riesgos y Consideraciones</h2>
+<ol type="1">
+<li><strong>Calidad de datos</strong>: Algunos países tienen datos
+limitados (cobertura &lt;50%)</li>
+<li><strong>Deriva del modelo</strong>: Los patrones socioeconómicos
+cambian; requiere reentrenamiento anual</li>
+<li><strong>Sesgo geográfico</strong>: El modelo está dominado por
+países de renta media; validar en extremos</li>
+<li><strong>Contexto político</strong>: Las recomendaciones asumen
+estabilidad institucional</li>
+<li><strong>Recursos limitados</strong>: Priorizar acciones de mayor
+impacto y menor costo</li>
+</ol>
+<hr />
+<h2 id="próximos-pasos">7. Próximos Pasos</h2>
+<ol type="1">
+<li>Validar hallazgos con expertos en desarrollo internacional</li>
+<li>Ampliar análisis con datos sub-nacionales</li>
+<li>Integrar variables cualitativas (conflictos, gobernanza)</li>
+<li>Establecer alianzas con UNICEF, Banco Mundial, OMS</li>
+<li>Crear dashboard interactivo para tomadores de decisión</li>
+</ol>
+<hr />
+<p><strong>Archivos relacionados:</strong> - Código:
+<code>src/01_exploracion.py</code> a
+<code>src/08_recomendaciones.py</code> - Modelos:
+<code>models/mejor_modelo_clasificacion.pkl</code>,
+<code>models/kmeans_clustering.pkl</code> - Visualizaciones:
+<code>reports/figures/</code> (15 figuras) - Datos procesados:
+<code>data/processed/</code> (9 archivos)</p>
+<p><strong>Fin del informe</strong></p>
+</body>
+</html>
